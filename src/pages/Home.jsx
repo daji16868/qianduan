@@ -5,7 +5,7 @@ import LazyImage from '../components/common/LazyImage';
 const Home = () => {
   // Hero section images
   const heroImage = {
-    src: '/assets/images/team_photo.jpg',
+    src: '/assets/images/banner28.jpg',
     alt: '全球反欺诈组织专业团队',
     priority: 'high'
   };
@@ -53,8 +53,8 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative aspect-[21/9] max-h-[700px] bg-blue-900 text-white">
-        <div className="absolute inset-0 overflow-hidden">
+      <section className="relative aspect-[18/9] max-h-[700px] bg-blue-900 text-white overflow-hidden">
+        <div className="absolute inset-0 scale-125">
           <LazyImage
             src={heroImage.src}
             alt={heroImage.alt}
