@@ -34,7 +34,7 @@ const Home = () => {
       src: '/assets/images/k4.jpg', 
       alt: '案件调查',
       title: '案件调查',
-      description: '全方位调查取证'
+      description: '专业团队全方位调查取证'
     }
   ];
 
@@ -114,7 +114,7 @@ const Home = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <h3 className="text-4xl font-bold mb-2">98%</h3>
+              <h3 className="text-4xl font-bold mb-2">85%</h3>
               <p>追回成功率</p>
             </div>
             <div>
@@ -122,7 +122,7 @@ const Home = () => {
               <p>合作国家</p>
             </div>
             <div>
-              <h3 className="text-4xl font-bold mb-2">300+</h3>
+              <h3 className="text-4xl font-bold mb-2">1000+</h3>
               <p>专业律师</p>
             </div>
           </div>
@@ -156,7 +156,7 @@ const Home = () => {
             需要帮助？立即联系我们
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            我们的专业团队随时为您提供援助，帮您追回损失
+            我们的专业团队24/7为您提供援助，帮助您追回损失
           </p>
           <Link
             to="/contact"
