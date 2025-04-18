@@ -5,8 +5,8 @@ import LazyImage from '../components/common/LazyImage';
 const Home = () => {
   // Hero section images
   const heroImage = {
-    src: '/assets/images/b3.jpg',
-    alt: 'Hero background image',
+    src: '/assets/images/team_photo.jpg',
+    alt: '全球反欺诈组织专业团队',
     priority: 'high'
   };
 
@@ -53,22 +53,22 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative aspect-[2.5/1] max-h-[600px] bg-blue-900 text-white">
+      <section className="relative aspect-[21/9] max-h-[700px] bg-blue-900 text-white">
         <div className="absolute inset-0 overflow-hidden">
           <LazyImage
             src={heroImage.src}
             alt={heroImage.alt}
-            className="absolute inset-0 w-full h-full object-cover opacity-50"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
             loading="eager"
             priority={heroImage.priority}
           />
         </div>
         
         <div className="relative container mx-auto px-6 py-32">
-          <h1 className="text-5xl font-bold mb-6">
+          <h1 className="text-5xl font-bold mb-6 text-shadow-lg">
             全球反欺诈组织
           </h1>
-          <p className="text-xl mb-8 max-w-2xl">
+          <p className="text-xl mb-8 max-w-2xl text-shadow">
             致力于打击全球诈骗犯罪，维护受害者权益。无论资金损失金额大小，我们的专业团队将利用法律手段，锁定诈骗分子，最大化追回损失。
           </p>
           <Link 
