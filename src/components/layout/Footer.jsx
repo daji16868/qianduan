@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <img 
-              src="/assets/images/logo.png"
+              src="/assets/images/logo2.png"
               alt="GA FG Logo"
               className="h-12 mb-4"
             />

@@ -58,7 +58,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-                      <img src="/assets/images/logo.png" alt="GA FG Logo" className="h-12" />
+                      <img src="/assets/images/logo1.png" alt="GA FG Logo" className="h-12" />
           </Link>
 
           {/* Desktop Navigation */}
