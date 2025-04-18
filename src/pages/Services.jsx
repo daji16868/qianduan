@@ -1,99 +1,104 @@
 // src/pages/Services.jsx
 import React from 'react';
+import LazyImage from '../components/common/LazyImage';
 
-function Services() {
+const Services = () => {
+  // Service sections with images from mapping
   const services = [
     {
-      title: '电信诈骗追赃',
-      description: '针对电信诈骗案件提供专业的资金追回服务，运用先进的技术手段追踪资金流向。',
-      icon: '📱'
+      id: 'enforcement',
+      title: '全球执法合作',
+      description: '联合国际刑警、各国警方、金融监管机构，协同破案',
+      images: [
+        '/assets/images/k1.jpg',
+        '/assets/images/k2.jpg',
+        '/assets/images/k3.jpg',
+        '/assets/images/k4.jpg'
+      ]
     },
     {
-      title: '投资诈骗处理',
-      description: '协助处理各类投资理财诈骗案件，通过法律手段维护受害者权益。',
-      icon: '💰'
+      id: 'legal',
+      title: '全球律师联盟',
+      description: '超过50+国家的专业律师提供跨境法律援助',
+      images: [
+        '/assets/images/y5.jpg',
+        '/assets/images/y6.jpg',
+        '/assets/images/y7.jpg',
+        '/assets/images/y8.jpg'
+      ]
     },
     {
-      title: '网络诈骗防范',
-      description: '提供网络诈骗预防咨询，帮助个人和企业建立防诈骗体系。',
-      icon: '🔒'
-    },
-    {
-      title: '资产追踪',
-      description: '使用专业工具追踪被骗资金流向，提高资金追回成功率。',
-      icon: '🔍'
-    },
-    {
-      title: '法律援助',
-      description: '提供专业的法律咨询和诉讼支持，保障受害者合法权益。',
-      icon: '⚖️'
-    },
-    {
-      title: '紧急响应',
-      description: '24小时紧急响应服务，第一时间处理诈骗案件。',
-      icon: '🚨'
+      id: 'tracking',
+      title: '跨境资金追踪',
+      description: '与各国银行、金融机构合作，冻结非法资金，阻止诈骗分子转移资产',
+      images: [
+        '/assets/images/p1.jpg',
+        '/assets/images/p2.jpg',
+        '/assets/images/p3.jpg',
+        '/assets/images/p4.jpg'
+      ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">我们的服务</h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            提供全方位的反欺诈服务，保护您的财产安全
+      <section className="relative h-[400px] bg-blue-900 text-white">
+        <LazyImage
+          src="/assets/images/k1.jpg"
+          alt="Global Services"
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          loading="eager"
+          priority="high"
+        />
+        <div className="relative container mx-auto px-6 py-32">
+          <h1 className="text-4xl font-bold mb-4">全球服务网络</h1>
+          <p className="text-xl max-w-2xl">
+            依托全球反诈资源，为受害者提供专业、高效的维权服务
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Services Grid */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow"
-            >
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+      {/* Services Sections */}
+      {services.map((service, index) => (
+        <section key={service.id} className={`py-20 ${index % 2 === 1 ? 'bg-gray-50' : ''}`}>
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
+              <p className="text-xl text-gray-600">{service.description}</p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Why Choose Us */}
-      <div className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">为什么选择我们？</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-blue-600 text-4xl mb-4">🌟</div>
-              <h3 className="text-xl font-semibold mb-2">专业团队</h3>
-              <p className="text-gray-600">
-                拥有经验丰富的法律专家和技术团队
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-blue-600 text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold mb-2">快速响应</h3>
-              <p className="text-gray-600">
-                24小时待命，及时处理紧急情况
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="text-blue-600 text-4xl mb-4">🎯</div>
-              <h3 className="text-xl font-semibold mb-2">高效追赃</h3>
-              <p className="text-gray-600">
-                采用先进技术手段，提高追赃成功率
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {service.images.map((image, idx) => (
+                <div key={idx} className="group relative overflow-hidden rounded-lg shadow-lg">
+                  <LazyImage
+                    src={image}
+                    alt={`${service.title} - Image ${idx + 1}`}
+                    className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+                  />
+                </div>
+              ))}
             </div>
           </div>
+        </section>
+      ))}
+
+      {/* Call to Action */}
+      <section className="bg-blue-900 text-white py-20">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-8">需要我们的帮助？</h2>
+          <p className="text-xl mb-8">
+            我们的专业团队随时准备为您提供援助，帮您追回损失
+          </p>
+          <button 
+            onClick={() => window.location.href = '/contact'}
+            className="bg-white text-blue-900 px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
+          >
+            立即咨询
+          </button>
         </div>
-      </div>
+      </section>
     </div>
   );
-}
+};
 
 export default Services;
