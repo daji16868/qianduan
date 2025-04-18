@@ -69,10 +69,10 @@ const Home = () => {
         <div className="relative container mx-auto px-6 h-full flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold mb-6 text-shadow-lg">
-              全球反欺诈组织
+              顶级律师团队坐镇
             </h1>
             <p className="text-xl mb-8 text-shadow">
-              致力于打击全球诈骗犯罪，维护受害者权益。无论资金损失金额大小，我们的专业团队将利用法律手段，锁定诈骗分子，最大化追回损失。
+              联手全球顶级律师，跨境追查诈骗案件。致力于打击全球诈骗犯罪，维护受害者权益。无论资金损失金额大小，我们的专业团队将利用法律手段，锁定诈骗分子，最大化追回损失。
             </p>
             <Link 
               to="/contact"
