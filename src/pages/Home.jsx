@@ -5,7 +5,7 @@ import LazyImage from '../components/common/LazyImage';
 const Home = () => {
   // Hero section images
   const heroImage = {
-    src: '/assets/images/team_photo.jpg',
+    src: '/assets/images/banner28.jpg',
     alt: '全球反欺诈组织专业团队',
     priority: 'high'
   };
