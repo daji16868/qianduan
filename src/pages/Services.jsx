@@ -43,14 +43,16 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[400px] bg-blue-900 text-white">
-        <LazyImage
-          src="/assets/images/k1.jpg"
-          alt="Global Services"
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
-          loading="eager"
-          priority="high"
-        />
+      <section className="relative h-[400px] bg-blue-900 text-white overflow-hidden">
+        <div className="absolute inset-0 h-full w-full">
+          <LazyImage
+            src="/assets/images/b1.jpg"
+            alt="全球服务网络"
+            className="w-full h-full object-cover object-center opacity-70"
+            loading="eager"
+            priority="high"
+          />
+        </div>
         <div className="relative container mx-auto px-6 py-32">
           <h1 className="text-4xl font-bold mb-4">全球服务网络</h1>
           <p className="text-xl max-w-2xl">
