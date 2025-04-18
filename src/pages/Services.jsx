@@ -49,6 +49,7 @@ const Services = () => {
             src="/assets/images/b1.jpg"
             alt="全球服务网络"
             className="w-full h-full object-cover object-center opacity-70"
+            style={{ objectPosition: "center 85%" }}
             loading="eager"
             priority="high"
           />

@@ -33,7 +33,8 @@ const About = () => {
           <LazyImage
             src="/assets/images/b1.jpg"
             alt="关于我们背景"
-            className="w-full h-full object-cover object-center opacity-70"
+            className="w-full h-full object-cover object-center object-position-bottom opacity-70"
+            style={{ objectPosition: "center 85%" }}
             loading="eager"
             priority="high"
           />
