@@ -46,20 +46,22 @@ function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Banner Image */}
-      <div className="relative h-[400px] overflow-hidden">
-        <LazyImage
-          src="/assets/images/b1.jpg"
-          alt="联系我们"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: "center 30%" }}
-          loading="eager"
-          priority="high"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">联系我们</h1>
-          <p className="text-xl text-center max-w-3xl px-4">全球追踪，精准打击诈骗犯罪</p>
+      <section className="relative h-[400px] bg-blue-900 text-white overflow-hidden">
+        <div className="absolute inset-0 h-full w-full">
+          <LazyImage
+            src="/assets/images/b1.jpg"
+            alt="联系我们"
+            className="w-full h-full object-cover object-center opacity-70"
+            style={{ objectPosition: "center 85%" }}
+            loading="eager"
+            priority="high"
+          />
         </div>
-      </div>
+        <div className="relative container mx-auto px-6 py-32">
+          <h1 className="text-4xl font-bold mb-4">联系我们</h1>
+          <p className="text-xl max-w-2xl">全球追踪，精准打击诈骗犯罪</p>
+        </div>
+      </section>
 
       {/* Contact Cards Section */}
       <div className="container mx-auto px-4 py-16">
