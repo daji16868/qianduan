@@ -78,14 +78,17 @@ const Info = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[400px] bg-blue-900 text-white">
-        <LazyImage
-          src="/assets/images/b3.jpg"
-          alt="Anti-fraud Information"
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
-          loading="eager"
-          priority="high"
-        />
+      <section className="relative h-[400px] bg-blue-900 text-white overflow-hidden">
+        <div className="absolute inset-0 h-full w-full">
+          <LazyImage
+            src="/assets/images/b1.jpg"
+            alt="反诈资讯中心"
+            className="w-full h-full object-cover object-center opacity-70"
+            style={{ objectPosition: "center 85%" }}
+            loading="eager"
+            priority="high"
+          />
+        </div>
         <div className="relative container mx-auto px-6 py-32">
           <h1 className="text-4xl font-bold mb-4">反诈资讯中心</h1>
           <p className="text-xl max-w-2xl">
