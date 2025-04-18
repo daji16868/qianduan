@@ -53,30 +53,32 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative aspect-[18/9] max-h-[700px] bg-blue-900 text-white overflow-hidden">
-        <div className="absolute inset-0 scale-125">
+      <section className="relative aspect-auto h-screen bg-blue-900 text-white overflow-hidden">
+        <div className="absolute inset-0">
           <LazyImage
             src={heroImage.src}
             alt={heroImage.alt}
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             loading="eager"
             priority={heroImage.priority}
           />
         </div>
         
-        <div className="relative container mx-auto px-6 py-32">
-          <h1 className="text-5xl font-bold mb-6 text-shadow-lg">
-            全球反欺诈组织
-          </h1>
-          <p className="text-xl mb-8 max-w-2xl text-shadow">
-            致力于打击全球诈骗犯罪，维护受害者权益。无论资金损失金额大小，我们的专业团队将利用法律手段，锁定诈骗分子，最大化追回损失。
-          </p>
-          <Link 
-            to="/contact"
-            className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition duration-300"
-          >
-            立即咨询
-          </Link>
+        <div className="relative container mx-auto px-6 h-full flex items-center">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl font-bold mb-6 text-shadow-lg">
+              全球反欺诈组织
+            </h1>
+            <p className="text-xl mb-8 text-shadow">
+              致力于打击全球诈骗犯罪，维护受害者权益。无论资金损失金额大小，我们的专业团队将利用法律手段，锁定诈骗分子，最大化追回损失。
+            </p>
+            <Link 
+              to="/contact"
+              className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition duration-300"
+            >
+              立即咨询
+            </Link>
+          </div>
         </div>
       </section>
 
