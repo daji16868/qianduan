@@ -42,7 +42,7 @@ const About = () => {
         <div className="relative container mx-auto px-6 py-32">
           <h1 className="text-4xl font-bold mb-4">关于我们</h1>
           <p className="text-xl max-w-2xl">
-            全球反欺诈组织致力于打击全球诈骗犯罪，维护受害者权益
+            全球追踪，精准打击诈骗犯罪
           </p>
         </div>
       </section>
