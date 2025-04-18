@@ -9,10 +9,15 @@ const IMAGE_BASE_PATH = '/assets/images';
 export const formatImagePath = (originalUrl) => {
   if (!originalUrl) return '';
 
-  // Extract filename from URL
+  // 如果已经是完整路径，直接返回
+  if (originalUrl.startsWith('/')) {
+    return originalUrl;
+  }
+
+  // 如果originalUrl包含完整路径，提取文件名
   const filename = originalUrl.split('/').pop();
   
-  // Return local asset path
+  // 返回本地资源路径
   return `${IMAGE_BASE_PATH}/${filename}`;
 };
 
@@ -22,13 +27,9 @@ export const formatImagePath = (originalUrl) => {
  * @returns {boolean} Whether image exists
  */
 export const checkImageExists = (imagePath) => {
-  try {
-    // In production, all images should be in public directory
-    return true;
-  } catch (error) {
-    console.error(`Image not found: ${imagePath}`);
-    return false;
-  }
+  // 在生产环境中，所有图片应该都在public目录中
+  // 这里简单返回true，因为我们假设图片已经正确部署
+  return true;
 };
 
 /**
@@ -38,10 +39,10 @@ export const checkImageExists = (imagePath) => {
  */
 export const getImageDimensions = (context) => {
   const dimensions = {
-    hero: { width: '100%', height: 'auto' },
-    thumbnail: { width: '300px', height: '200px' },
-    avatar: { width: '64px', height: '64px' },
-    default: { width: 'auto', height: 'auto' }
+    hero: { width: '100%', height: '100%', objectFit: 'cover' },
+    thumbnail: { width: '100%', height: '100%', objectFit: 'cover' },
+    avatar: { width: '64px', height: '64px', objectFit: 'cover' },
+    default: {}
   };
   
   return dimensions[context] || dimensions.default;

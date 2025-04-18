@@ -7,6 +7,7 @@ const LazyImage = ({
   alt,
   context = 'default',
   className = '',
+  style = {},
   onLoad,
   onError,
   loading = 'lazy',
@@ -19,7 +20,8 @@ const LazyImage = ({
   useEffect(() => {
     const loadImage = async () => {
       try {
-        const formattedPath = formatImagePath(src);
+        // 如果src已经是完整路径，则直接使用
+        const formattedPath = src.startsWith('/') ? src : formatImagePath(src);
         
         if (!checkImageExists(formattedPath)) {
           throw new Error('Image not found');
@@ -49,6 +51,7 @@ const LazyImage = ({
   }
 
   const handleImageLoad = (event) => {
+    setIsLoading(false);
     if (onLoad) onLoad(event);
   };
 
@@ -57,16 +60,19 @@ const LazyImage = ({
     if (onError) onError(event);
   };
 
+  // 合并样式
+  const combinedStyle = { ...dimensions, ...style };
+
   return (
     <>
       {isLoading && (
-        <div className="animate-pulse bg-gray-200" style={dimensions} />
+        <div className="animate-pulse bg-gray-200" style={combinedStyle} />
       )}
       <img
-        src={imageUrl}
+        src={imageUrl || src} // 如果imageUrl为空，直接使用原始src
         alt={formattedAlt}
         className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'} ${className}`}
-        style={dimensions}
+        style={combinedStyle}
         loading={loading}
         fetchPriority={priority}
         onLoad={handleImageLoad}

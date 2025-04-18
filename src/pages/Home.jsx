@@ -58,11 +58,12 @@ const Home = () => {
           <LazyImage
             src={heroImage.src}
             alt={heroImage.alt}
-            className="w-full h-full object-cover object-center"
-            style={{ objectPosition: "center center" }}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 30%" }}
             loading="eager"
             priority={heroImage.priority}
           />
+          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         </div>
         
         <div className="relative container mx-auto px-6 h-full flex items-center">
@@ -97,6 +98,7 @@ const Home = () => {
                     src={service.src}
                     alt={service.alt}
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition duration-300"
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
