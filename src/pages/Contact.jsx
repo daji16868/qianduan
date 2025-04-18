@@ -48,7 +48,7 @@ function Contact() {
       {/* Hero Section with Banner Image */}
       <div className="relative h-[400px] overflow-hidden">
         <LazyImage
-          src="/assets/images/banner28.jpg"
+          src="/assets/images/b1.jpg"
           alt="联系我们"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center 30%" }}
