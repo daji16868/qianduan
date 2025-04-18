@@ -79,11 +79,6 @@ const Footer = () => {
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
               © 2025 全球反欺诈组织 版权所有
             </div>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <Link to="/privacy" className="hover:text-white">隐私政策</Link>
-              <Link to="/terms" className="hover:text-white">服务条款</Link>
-              <Link to="/disclaimer" className="hover:text-white">免责声明</Link>
-            </div>
           </div>
         </div>
       </div>
