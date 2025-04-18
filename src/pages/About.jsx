@@ -29,6 +29,13 @@ const About = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[400px] bg-blue-900 text-white">
+        <LazyImage
+          src="/assets/images/b1.jpg"
+          alt="关于我们背景"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          loading="eager"
+          priority="high"
+        />
         <div className="relative container mx-auto px-6 py-32">
           <h1 className="text-4xl font-bold mb-4">关于我们</h1>
           <p className="text-xl max-w-2xl">
