@@ -53,12 +53,13 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative aspect-auto h-screen bg-blue-900 text-white overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative h-screen bg-blue-900 text-white overflow-hidden">
+        <div className="absolute inset-0 h-full w-full">
           <LazyImage
             src={heroImage.src}
             alt={heroImage.alt}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center"
+            style={{ objectPosition: "center center" }}
             loading="eager"
             priority={heroImage.priority}
           />
