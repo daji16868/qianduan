@@ -16,6 +16,7 @@ const Info = lazy(() => import('./pages/Info'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
+const Team = lazy(() => import('./pages/Team'));
 
 // AnimatedRoutes component for page transitions
 const AnimatedRoutes = () => {
@@ -34,6 +35,7 @@ const AnimatedRoutes = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
       </Suspense>
     </AnimatePresence>

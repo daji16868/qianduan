@@ -19,6 +19,7 @@ const Header = () => {
   const navLinks = [
     { path: '/', label: '首页' },
     { path: '/about', label: '关于我们' },
+    { path: '/team', label: '团队成员' },
     { path: '/cases', label: '案例分析' },
     { path: '/services', label: '服务项目' },
     { path: '/info', label: '反诈资讯' },
