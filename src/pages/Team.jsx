@@ -104,7 +104,7 @@ const Team = () => {
               <p>合作国家</p>
             </div>
             <div>
-              <h3 className="text-4xl font-bold mb-2">98%</h3>
+              <h3 className="text-4xl font-bold mb-2">95%</h3>
               <p>案件胜诉率</p>
             </div>
           </div>

@@ -190,7 +190,7 @@ const Home = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <h3 className="text-4xl font-bold mb-2">98%</h3>
+              <h3 className="text-4xl font-bold mb-2">85%</h3>
               <p>追回成功率</p>
             </div>
             <div>
