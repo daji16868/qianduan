@@ -1,6 +1,7 @@
 // src/pages/Services.jsx
 import React from 'react';
 import LazyImage from '../components/common/LazyImage';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   // Service sections with images from mapping
@@ -92,12 +93,12 @@ const Services = () => {
           <p className="text-xl mb-8">
             我们的专业团队随时准备为您提供援助，帮您追回损失
           </p>
-          <button 
-            onClick={() => window.location.href = '/contact'}
-            className="bg-white text-blue-900 px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
+          <Link 
+            to="/contact"
+            className="bg-white text-blue-900 px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300 inline-block"
           >
             立即咨询
-          </button>
+          </Link>
         </div>
       </section>
     </div>
