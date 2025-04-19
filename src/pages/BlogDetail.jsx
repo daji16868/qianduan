@@ -185,7 +185,7 @@ const BlogDetail = () => {
         {
           id: 5,
           title: '破解灰色产业的暴利真相：不要轻信高回报承诺',
-          image: '/assets/images/1742987123.jpg',
+          image: '/assets/images/1742906242.png',
           views: 3150,
           content: `
             <h2>揭秘灰色产业的暴利陷阱</h2>
@@ -248,7 +248,7 @@ const BlogDetail = () => {
         {
           id: 6,
           title: '数字时代的个人品牌塑造：从零开始打造专业形象',
-          image: '/assets/images/1742988321.jpg',
+          image: '/assets/images/blog-6.jpg',
           views: 2945,
           content: `
             <h2>构建个人品牌的完整指南</h2>
@@ -317,7 +317,7 @@ const BlogDetail = () => {
         {
           id: 7,
           title: 'AI时代的职业转型：如何保持竞争力不被淘汰',
-          image: '/assets/images/1742989256.jpg',
+          image: '/assets/images/blog-7.jpg',
           views: 5847,
           content: `
             <h2>人工智能时代的职业生存指南</h2>
@@ -404,7 +404,7 @@ const BlogDetail = () => {
         {
           id: 8,
           title: '数字隐私保护：如何在数据泄露时代保护个人信息',
-          image: '/assets/images/1742986432.jpg',
+          image: '/assets/images/blog-8.jpeg',
           views: 4289,
           content: `
             <h2>数据泄露时代的个人隐私保护指南</h2>
@@ -499,7 +499,7 @@ const BlogDetail = () => {
         {
           id: 9,
           title: '老年人防骗指南：如何保护银发族免受诈骗困扰',
-          image: '/assets/images/1742985478.jpg',
+          image: '/assets/images/blog-9.jpeg',
           views: 6731,
           content: `
             <h2>银发族防诈骗全方位指南</h2>
@@ -614,7 +614,7 @@ const BlogDetail = () => {
         {
           id: 10,
           title: '网络购物安全指南：如何避免网购陷阱和诈骗',
-          image: '/assets/images/1742984555.jpg',
+          image: '/assets/images/blog-10.jpeg',
           views: 7823,
           content: `
             <h2>安全网购全攻略</h2>
@@ -719,7 +719,7 @@ const BlogDetail = () => {
         {
           id: 11,
           title: '家庭财务安全管理：保护家庭资产的实用策略',
-          image: '/assets/images/1742983689.jpg',
+          image: '/assets/images/blog-11.jpeg',
           views: 5628,
           content: `
             <h2>构建家庭财务安全防线</h2>
