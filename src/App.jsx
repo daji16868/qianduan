@@ -14,6 +14,8 @@ const CaseDetail = lazy(() => import('./pages/CaseDetail'));
 const Services = lazy(() => import('./pages/Services'));
 const Info = lazy(() => import('./pages/Info'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 
 // AnimatedRoutes component for page transitions
 const AnimatedRoutes = () => {
@@ -30,6 +32,8 @@ const AnimatedRoutes = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/info" element={<Info />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
         </Routes>
       </Suspense>
     </AnimatePresence>
