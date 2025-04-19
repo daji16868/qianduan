@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
             <img 
@@ -17,17 +17,6 @@ const Footer = () => {
             <p className="text-gray-400 mb-4 text-sm">
               致力于打击全球诈骗犯罪，维护受害者权益。
             </p>
-            <div className="space-y-2 text-gray-400 text-sm">
-              <p className="flex items-center">
-                <span className="mr-2">Tel:</span>
-                <a href="tel:400-XXX-XXXX" className="hover:text-white">400-XXX-XXXX</a>
-              </p>
-              <p className="flex items-center">
-                <span className="mr-2">Email:</span>
-                <a href="mailto:contact@ga-fg.com" className="hover:text-white">contact@ga-fg.com</a>
-              </p>
-              <p>北京市朝阳区XX大厦</p>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -38,6 +27,7 @@ const Footer = () => {
               <li><Link to="/about" className="hover:text-white">关于我们</Link></li>
               <li><Link to="/cases" className="hover:text-white">成功案例</Link></li>
               <li><Link to="/services" className="hover:text-white">服务项目</Link></li>
+              <li><Link to="/team" className="hover:text-white">团队成员</Link></li>
               <li><Link to="/help" className="hover:text-white">反诈咨询</Link></li>
             </ul>
           </div>
@@ -52,24 +42,6 @@ const Footer = () => {
               <li>犯罪预防</li>
               <li>安全咨询</li>
             </ul>
-          </div>
-
-          {/* Contact & QR Code */}
-          <div>
-            <h3 className="text-lg font-medium mb-4">关注我们</h3>
-            <div className="flex items-center">
-              <div className="bg-white p-2 w-24 rounded">
-                <img 
-                  src="/assets/images/qr-code.png"
-                  alt="WeChat QR Code"
-                  className="w-full"
-                />
-              </div>
-              <div className="ml-4 text-sm text-gray-400">
-                <p>扫描二维码</p>
-                <p>关注公众号</p>
-              </div>
-            </div>
           </div>
         </div>
 
