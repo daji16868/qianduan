@@ -77,11 +77,11 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map(member => (
             <div key={member.id} className="group">
-              <div className="relative overflow-hidden rounded-lg mb-4">
+              <div className="relative overflow-hidden rounded-lg mb-4 bg-gray-100">
                 <LazyImage
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300"
+                  className="w-full h-64 object-cover object-top transform group-hover:scale-105 transition duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
