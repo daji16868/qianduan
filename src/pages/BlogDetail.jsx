@@ -18,7 +18,16 @@ const BlogDetail = () => {
           id: 1,
           title: '爱情陷阱揭秘："我们如何诈骗数百万美金"',
           image: '/assets/images/1742994741.jpg',
+          views: 2499,
           content: `
+            <p>实如其来的爱情和礼品，来自善于伪装力十足又专业成功的骗子人……这样看似简单的诱惑，却可能是"爱情陷阱"骗局背后的开始，近年来，全球各地沦陷爱情骗局受害者的损失达到数亿美金。</p>
+            
+            <p>在骗子门庭林苾的诈骗风险中，是婚恋的犯罪例证：许多网上诈骗分子有某类似入口等质量，被迫在东南亚如缅甸的边境地区进行欺诈活动。</p>
+            
+            <p>BBC国际频道的调查报告详细调查了内部运作，并独家采访了一位前诈骗集团专家，他揭露了他们读者受害者最常见的各种情景。</p>
+            
+            <p>诈骗有组织的骗徒是"旅复"骗局为情感诈骗，每出嫌犯且受害者通上电话，继们给合同后，把目标养成上，实施不道德的手多实现。</p>
+            
             <h2>爱情陷阱诈骗手法详解</h2>
             <p>爱情陷阱是当今最常见也是最具欺骗性的诈骗手段之一，诈骗分子利用受害者对爱情的憧憬和信任，实施精心设计的骗局。</p>
             <p>诈骗团伙通常会创建虚假的社交媒体账号，使用盗用的照片和虚构的身份，瞄准对方可能感兴趣的特质。他们会花费数周甚至数月时间与受害者建立信任关系，通过频繁的通讯、甜言蜜语和虚假承诺来培养感情依赖。</p>
@@ -41,12 +50,16 @@ const BlogDetail = () => {
           `,
           date: '2025-03-26',
           author: '张安全',
+          authorTitle: '金融诈骗',
+          authorDesc: '全球反欺诈组织的专一位有着丰富经验的人，提供专业法律援助。',
+          authorAvatar: '/assets/images/avatar1.jpg',
           tags: ['爱情诈骗', '网络安全', '防骗指南']
         },
         {
           id: 2,
           title: '常见税务骗局和帮助纳税人避免这些骗局的提示',
           image: '/assets/images/1742991999.jpg',
+          views: 1875,
           content: `
             <h2>税务诈骗手法详解</h2>
             <p>税务诈骗是一种常见的金融欺诈行为，诈骗分子通常冒充税务机关人员，利用纳税人对税务问题的恐惧和不熟悉，实施各种骗局。</p>
@@ -69,12 +82,16 @@ const BlogDetail = () => {
           `,
           date: '2025-03-25',
           author: '李财税',
+          authorTitle: '税务专家',
+          authorDesc: '全球反欺诈组织的税务诈骗专家，提供专业税务咨询服务。',
+          authorAvatar: '/assets/images/avatar2.jpg',
           tags: ['税务诈骗', '财务安全', '防骗指南']
         },
         {
           id: 3,
           title: '常见骗局有哪些，如何识别？',
           image: '/assets/images/1742990554.jpg',
+          views: 3621,
           content: `
             <h2>2025年最新流行诈骗手法全解析</h2>
             <p>随着科技的发展，诈骗手法也在不断升级，从传统的电话诈骗到如今的AI语音克隆诈骗，诈骗分子的手段越来越隐蔽和技术化。</p>
@@ -100,6 +117,9 @@ const BlogDetail = () => {
           `,
           date: '2025-03-24',
           author: '王安全',
+          authorTitle: '网络安全专家',
+          authorDesc: '全球反欺诈组织的网络安全专家，擅长分析各类诈骗手法。',
+          authorAvatar: '/assets/images/avatar3.jpg',
           tags: ['诈骗识别', '网络安全', '防骗技巧']
         }
       ];
@@ -112,6 +132,45 @@ const BlogDetail = () => {
 
     fetchArticle();
   }, [id]);
+
+  // 获取所有文章用于显示相关文章
+  const relatedArticles = [
+    {
+      id: 1,
+      title: '爱情陷阱揭秘："我们如何诈骗数百万美金"',
+      image: '/assets/images/1742994741.jpg',
+      description: '揭露跨国爱情诈骗团伙的作案手法，教你如何识别和防范',
+      date: '2025-03-26'
+    },
+    {
+      id: 2,
+      title: '常见税务骗局和帮助纳税人避免这些骗局的提示',
+      image: '/assets/images/1742991999.jpg',
+      description: '详解各类税务诈骗手段，提供实用防范建议',
+      date: '2025-03-25'
+    },
+    {
+      id: 3,
+      title: '常见骗局有哪些，如何识别？',
+      image: '/assets/images/1742990554.jpg',
+      description: '全面解析当前流行的诈骗手段，提供详细识别方法',
+      date: '2025-03-24'
+    },
+    {
+      id: 4,
+      title: '如何应对网络诈骗，保护个人资产?',
+      image: '/assets/images/1742988567.jpg',
+      description: '详细介绍防范网络诈骗的方法和技巧',
+      date: '2025-03-23'
+    },
+    {
+      id: 5,
+      title: '揭露社交媒体骗局：外币"生活方式"骗局',
+      image: '/assets/images/1742988815.jpg',
+      description: '揭露社交媒体上常见的外币投资骗局',
+      date: '2025-03-22'
+    }
+  ].filter(article => article.id !== parseInt(id)).slice(0, 5);
 
   if (loading) {
     return (
@@ -138,118 +197,127 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[400px] bg-blue-900 text-white overflow-hidden">
-        <div className="absolute inset-0 h-full w-full">
-          <LazyImage
-            src={article.image}
-            alt={article.title}
-            className="w-full h-full object-cover object-center object-position-bottom opacity-70"
-            style={{ objectPosition: "center 30%" }}
-            loading="eager"
-            priority="high"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 to-blue-900/80"></div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header Banner */}
+      <div className="w-full bg-blue-900 text-white py-3">
+        <div className="container mx-auto px-4 text-center text-sm">
+          <span>全球反欺诈组织，同犯诈骗，追回被骗资金！</span>
+          <a href="/contact" className="ml-4 underline">联系我们</a>
         </div>
-        <div className="relative container mx-auto px-6 py-32 md:py-24">
-          <div className="max-w-4xl">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{article.title}</h1>
-            <div className="flex flex-wrap items-center text-sm md:text-base">
-              <span className="bg-blue-800/50 px-3 py-1 rounded-full mr-4 mb-2">{article.date}</span>
-              <span className="bg-blue-800/50 px-3 py-1 rounded-full mr-4 mb-2">作者：{article.author}</span>
-              <div className="flex flex-wrap mt-2 md:mt-0">
-                {article.tags.map((tag, index) => (
-                  <span key={index} className="bg-blue-600 px-3 py-1 rounded-full mr-2 mb-2 text-sm">
-                    {tag}
-                  </span>
+      </div>
+
+      {/* Blog Detail Container */}
+      <div className="container mx-auto px-4 py-8">
+        {/* Article Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-3">{article.title}</h1>
+          <div className="flex items-center text-sm text-gray-600 mb-4">
+            <span className="flex items-center">
+              <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              {article.date}
+            </span>
+            <span className="mx-3">|</span>
+            <span className="flex items-center">
+              <svg className="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              {article.views}
+            </span>
+            <span className="mx-3">|</span>
+            <span>全球反欺诈组织</span>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {article.tags.map((tag, index) => (
+              <span key={index} className="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Main Content with Sidebar */}
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Article Content */}
+          <div className="w-full md:w-2/3">
+            {/* Main Image */}
+            <div className="mb-8 rounded-lg overflow-hidden">
+              <LazyImage
+                src={article.image}
+                alt={article.title}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Article Text */}
+            <div className="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8">
+              <div 
+                className="prose prose-lg max-w-none prose-headings:text-blue-800 prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-li:text-gray-700"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
+              
+              <div className="mt-10 pt-6 border-t border-gray-200">
+                <Link 
+                  to="/info" 
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  返回资讯列表
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="w-full md:w-1/3">
+            {/* Author Card */}
+            <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+              <div className="flex items-center mb-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
+                  <img src={article.authorAvatar || '/assets/images/avatar1.jpg'} alt={article.author} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">{article.author}</h3>
+                  <p className="text-sm text-gray-600">{article.authorTitle || '金融诈骗专家'}</p>
+                </div>
+              </div>
+              <p className="text-gray-700 text-sm mb-4">{article.authorDesc || '全球反欺诈组织的专一位有着丰富经验的人，提供专业法律援助。'}</p>
+              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+                联系咨询
+              </button>
+            </div>
+
+            {/* Related Articles */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="font-bold text-lg mb-4">相关文章</h3>
+              <div className="space-y-4">
+                {relatedArticles.map(relArticle => (
+                  <div key={relArticle.id} className="group">
+                    <Link to={`/blog/${relArticle.id}`} className="flex items-start gap-3 hover:bg-gray-50 p-2 rounded transition">
+                      <div className="w-20 h-16 flex-shrink-0 rounded overflow-hidden">
+                        <LazyImage
+                          src={relArticle.image}
+                          alt={relArticle.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-grow">
+                        <h4 className="text-sm font-medium group-hover:text-blue-600 line-clamp-2">{relArticle.title}</h4>
+                        <p className="text-xs text-gray-500 mt-1">{relArticle.date}</p>
+                      </div>
+                    </Link>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Article Content */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-10">
-            <div 
-              className="prose prose-lg max-w-none prose-headings:text-blue-800 prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-li:text-gray-700 prose-li:my-1"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
-            
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <Link 
-                to="/info" 
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                返回资讯列表
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Articles Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-12 text-center">相关资讯</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[1, 2, 3].filter(relatedId => relatedId !== parseInt(id)).slice(0, 2).map(relatedId => {
-              const relatedArticle = [
-                {
-                  id: 1,
-                  title: '爱情陷阱揭秘："我们如何诈骗数百万美金"',
-                  image: '/assets/images/1742994741.jpg',
-                  description: '揭露跨国爱情诈骗团伙的作案手法，教你如何识别和防范',
-                  date: '2025-03-26'
-                },
-                {
-                  id: 2,
-                  title: '常见税务骗局和帮助纳税人避免这些骗局的提示',
-                  image: '/assets/images/1742991999.jpg',
-                  description: '详解各类税务诈骗手段，提供实用防范建议',
-                  date: '2025-03-25'
-                },
-                {
-                  id: 3,
-                  title: '常见骗局有哪些，如何识别？',
-                  image: '/assets/images/1742990554.jpg',
-                  description: '全面解析当前流行的诈骗手段，提供详细识别方法',
-                  date: '2025-03-24'
-                }
-              ].find(a => a.id === relatedId);
-              
-              return (
-                <Link 
-                  key={relatedId} 
-                  to={`/blog/${relatedId}`} 
-                  className="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105 duration-300"
-                >
-                  <div className="relative h-56">
-                    <LazyImage
-                      src={relatedArticle.image}
-                      alt={relatedArticle.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                      <span className="text-sm text-white">{relatedArticle.date}</span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{relatedArticle.title}</h3>
-                    <p className="text-gray-600 mb-4">{relatedArticle.description}</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };
