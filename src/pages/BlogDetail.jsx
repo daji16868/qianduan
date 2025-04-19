@@ -145,41 +145,44 @@ const BlogDetail = () => {
           <LazyImage
             src={article.image}
             alt={article.title}
-            className="w-full h-full object-cover object-center opacity-50"
-            style={{ objectPosition: "center 25%" }}
+            className="w-full h-full object-cover object-center object-position-bottom opacity-70"
+            style={{ objectPosition: "center 30%" }}
             loading="eager"
             priority="high"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/50 to-blue-900/80"></div>
         </div>
-        <div className="relative container mx-auto px-6 py-32">
-          <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
-          <div className="flex items-center text-sm">
-            <span className="mr-4">{article.date}</span>
-            <span className="mr-4">作者：{article.author}</span>
-            <div className="flex flex-wrap">
-              {article.tags.map((tag, index) => (
-                <span key={index} className="bg-blue-500 px-2 py-1 rounded mr-2 mb-2">
-                  {tag}
-                </span>
-              ))}
+        <div className="relative container mx-auto px-6 py-32 md:py-24">
+          <div className="max-w-4xl">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">{article.title}</h1>
+            <div className="flex flex-wrap items-center text-sm md:text-base">
+              <span className="bg-blue-800/50 px-3 py-1 rounded-full mr-4 mb-2">{article.date}</span>
+              <span className="bg-blue-800/50 px-3 py-1 rounded-full mr-4 mb-2">作者：{article.author}</span>
+              <div className="flex flex-wrap mt-2 md:mt-0">
+                {article.tags.map((tag, index) => (
+                  <span key={index} className="bg-blue-600 px-3 py-1 rounded-full mr-2 mb-2 text-sm">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <section className="py-12">
+      <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-10">
             <div 
-              className="prose prose-lg max-w-none"
+              className="prose prose-lg max-w-none prose-headings:text-blue-800 prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-li:text-gray-700 prose-li:my-1"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
             
             <div className="mt-12 pt-8 border-t border-gray-200">
               <Link 
                 to="/info" 
-                className="inline-flex items-center text-blue-600 hover:text-blue-800"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -192,10 +195,10 @@ const BlogDetail = () => {
       </section>
 
       {/* Related Articles Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-8 text-center">相关资讯</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="text-2xl font-bold mb-12 text-center">相关资讯</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[1, 2, 3].filter(relatedId => relatedId !== parseInt(id)).slice(0, 2).map(relatedId => {
               const relatedArticle = [
                 {
@@ -227,17 +230,19 @@ const BlogDetail = () => {
                   to={`/blog/${relatedId}`} 
                   className="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105 duration-300"
                 >
-                  <div className="relative h-48">
+                  <div className="relative h-56">
                     <LazyImage
                       src={relatedArticle.image}
                       alt={relatedArticle.title}
                       className="w-full h-full object-cover"
                     />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                      <span className="text-sm text-white">{relatedArticle.date}</span>
+                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-2">{relatedArticle.title}</h3>
                     <p className="text-gray-600 mb-4">{relatedArticle.description}</p>
-                    <span className="text-sm text-gray-500">{relatedArticle.date}</span>
                   </div>
                 </Link>
               );
