@@ -93,7 +93,7 @@ const Cases = () => {
       id: 10,
       title: '跨境电商诈骗资金追回',
       category: 'fraud',
-      image: '/assets/images/1742989430.jpg',
+      image: '/assets/images/1742996277.jpg',
       description: '协助跨境电商受害者追回被骗资金，促成国际合作打击诈骗',
       amount: '￥900,000',
       duration: '3个月'
@@ -102,7 +102,7 @@ const Cases = () => {
       id: 11,
       title: '社交媒体投资诈骗资金追回',
       category: 'fraud',
-      image: '/assets/images/1742989665.jpg',
+      image: '/assets/images/1742998733.jpg',
       description: '追回通过社交媒体推广的虚假投资项目诈骗资金',
       amount: '￥1,800,000',
       duration: '4个月'
