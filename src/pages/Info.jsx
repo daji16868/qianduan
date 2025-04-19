@@ -61,28 +61,28 @@ const Info = () => {
     {
       id: 8,
       title: '数字隐私保护：如何在数据泄露时代保护个人信息',
-      image: '/assets/images/blog-8.jpg',
+      image: '/assets/images/blog-8.jpeg',
       description: '全面介绍个人数据保护策略，应对数据泄露风险',
       date: '2025-03-19'
     },
     {
       id: 9,
       title: '老年人防骗指南：如何保护银发族免受诈骗困扰',
-      image: '/assets/images/blog-9.jpg',
+      image: '/assets/images/blog-9.jpeg',
       description: '专为老年人设计的防骗指南，帮助家人远离诈骗风险',
       date: '2025-03-18'
     },
     {
       id: 10,
       title: '网络购物安全指南：如何避免网购陷阱和诈骗',
-      image: '/assets/images/blog-10.jpg',
+      image: '/assets/images/blog-10.jpeg',
       description: '网购安全全攻略，教你识别和避免常见的购物陷阱',
       date: '2025-03-17'
     },
     {
       id: 11,
       title: '社交媒体安全使用指南：保护隐私防止信息泄露',
-      image: '/assets/images/blog-11.jpg',
+      image: '/assets/images/blog-11.jpeg',
       description: '在社交媒体时代如何保护个人隐私和信息安全',
       date: '2025-03-16'
     }
