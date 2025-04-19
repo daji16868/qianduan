@@ -261,22 +261,6 @@ const Info = () => {
           </div>
         </div>
       </section>
-
-      {/* Emergency Contact */}
-      <section className="bg-red-600 text-white py-12">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold mb-4">24/7 紧急求助热线</h2>
-          <a
-            href="tel:400-XXX-XXXX"
-            className="text-3xl font-bold hover:text-gray-200 transition duration-300"
-          >
-            400-XXX-XXXX
-          </a>
-          <p className="mt-4 text-lg">
-            如果您遭遇诈骗，请立即拨打我们的紧急求助热线获取帮助
-          </p>
-        </div>
-      </section>
     </div>
   );
 };
