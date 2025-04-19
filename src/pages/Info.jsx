@@ -40,7 +40,7 @@ const Info = () => {
     {
       id: 5,
       title: '破解灰色产业的暴利真相：不要轻信高回报承诺',
-      image: '/assets/images/1742906242.jpg',
+      image: '/assets/images/1742906242.png',
       description: '揭秘灰色产业的暴利陷阱，远离投资诈骗',
       date: '2025-03-22'
     },
