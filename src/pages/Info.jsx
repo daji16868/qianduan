@@ -1,9 +1,12 @@
 // src/pages/Info.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import LazyImage from '../components/common/LazyImage';
 import { Link } from 'react-router-dom';
 
 const Info = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 6;
+
   // Blog/News articles with images
   const articles = [
     {
@@ -26,8 +29,75 @@ const Info = () => {
       image: '/assets/images/1742990554.jpg',
       description: '全面解析当前流行的诈骗手段，提供详细识别方法',
       date: '2025-03-26'
+    },
+    {
+      id: 4,
+      title: '如何应对网络诈骗，保护个人资产?',
+      image: '/assets/images/1742988567.jpg',
+      description: '网络诈骗防范全指南，助你保护个人财产和信息安全',
+      date: '2025-03-23'
+    },
+    {
+      id: 5,
+      title: '破解灰色产业的暴利真相：不要轻信高回报承诺',
+      image: '/assets/images/1742906242.jpg',
+      description: '揭秘灰色产业的暴利陷阱，远离投资诈骗',
+      date: '2025-03-22'
+    },
+    {
+      id: 6,
+      title: '数字时代的个人品牌塑造：从零开始打造专业形象',
+      image: '/assets/images/blog-6.jpg',
+      description: '如何在数字时代建立个人品牌，提升职业竞争力',
+      date: '2025-03-21'
+    },
+    {
+      id: 7,
+      title: 'AI时代的职业转型：如何保持竞争力不被淘汰',
+      image: '/assets/images/blog-7.jpg',
+      description: '人工智能时代的职业规划指南，让你在技术变革中立于不败之地',
+      date: '2025-03-20'
+    },
+    {
+      id: 8,
+      title: '数字隐私保护：如何在数据泄露时代保护个人信息',
+      image: '/assets/images/blog-8.jpg',
+      description: '全面介绍个人数据保护策略，应对数据泄露风险',
+      date: '2025-03-19'
+    },
+    {
+      id: 9,
+      title: '老年人防骗指南：如何保护银发族免受诈骗困扰',
+      image: '/assets/images/blog-9.jpg',
+      description: '专为老年人设计的防骗指南，帮助家人远离诈骗风险',
+      date: '2025-03-18'
+    },
+    {
+      id: 10,
+      title: '网络购物安全指南：如何避免网购陷阱和诈骗',
+      image: '/assets/images/blog-10.jpg',
+      description: '网购安全全攻略，教你识别和避免常见的购物陷阱',
+      date: '2025-03-17'
+    },
+    {
+      id: 11,
+      title: '社交媒体安全使用指南：保护隐私防止信息泄露',
+      image: '/assets/images/blog-11.jpg',
+      description: '在社交媒体时代如何保护个人隐私和信息安全',
+      date: '2025-03-16'
     }
   ];
+
+  // 计算当前页面应显示的文章
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
+  
+  // 计算总页数
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
+
+  // 分页切换函数
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // Help center categories
   const helpCategories = [
@@ -102,7 +172,7 @@ const Info = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center">最新资讯</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map(article => (
+            {currentArticles.map(article => (
               <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="relative h-48">
                   <LazyImage
@@ -127,6 +197,39 @@ const Info = () => {
               </div>
             ))}
           </div>
+          
+          {/* 分页控件 */}
+          {totalPages > 1 && (
+            <div className="flex justify-center mt-12">
+              <nav className="flex items-center">
+                <button 
+                  onClick={() => paginate(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`mx-1 px-4 py-2 rounded ${currentPage === 1 ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+                >
+                  上一页
+                </button>
+                
+                {Array.from({ length: totalPages }, (_, i) => (
+                  <button
+                    key={i + 1}
+                    onClick={() => paginate(i + 1)}
+                    className={`mx-1 px-4 py-2 rounded ${currentPage === i + 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'}`}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+                
+                <button 
+                  onClick={() => paginate(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className={`mx-1 px-4 py-2 rounded ${currentPage === totalPages ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+                >
+                  下一页
+                </button>
+              </nav>
+            </div>
+          )}
         </div>
       </section>
 
