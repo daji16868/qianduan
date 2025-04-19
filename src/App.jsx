@@ -10,6 +10,7 @@ import { FullPageLoader } from './components/common/Loader';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Cases = lazy(() => import('./pages/Cases'));
+const CaseDetail = lazy(() => import('./pages/CaseDetail'));
 const Services = lazy(() => import('./pages/Services'));
 const Info = lazy(() => import('./pages/Info'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -25,6 +26,7 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/cases" element={<Cases />} />
+          <Route path="/case/:id" element={<CaseDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/info" element={<Info />} />
           <Route path="/contact" element={<Contact />} />

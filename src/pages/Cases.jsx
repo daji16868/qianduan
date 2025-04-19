@@ -1,5 +1,6 @@
 // src/pages/Cases.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import LazyImage from '../components/common/LazyImage';
 
 const Cases = () => {
@@ -60,6 +61,51 @@ const Cases = () => {
       description: '协助受害者追回信用卡诈骗资金，并提供相关法律支持',
       amount: '￥500,000',
       duration: '1个月'
+    },
+    {
+      id: 7,
+      title: '虚假贷款诈骗资金追回',
+      category: 'financial',
+      image: '/assets/images/1742990103.jpg',
+      description: '帮助受害者追回虚假贷款诈骗资金，打击非法贷款平台',
+      amount: '￥350,000',
+      duration: '3个月'
+    },
+    {
+      id: 8,
+      title: '网络赌博诈骗资金追回',
+      category: 'cyber',
+      image: '/assets/images/1742991751.jpg',
+      description: '成功追回在非法网络赌博平台的损失资金',
+      amount: '￥1,200,000',
+      duration: '4个月'
+    },
+    {
+      id: 9,
+      title: '虚拟货币交易诈骗追回',
+      category: 'cyber',
+      image: '/assets/images/1742990554.jpg',
+      description: '通过技术手段追回虚拟货币交易诈骗损失',
+      amount: '￥2,500,000',
+      duration: '5个月'
+    },
+    {
+      id: 10,
+      title: '跨境电商诈骗资金追回',
+      category: 'fraud',
+      image: '/assets/images/1742989430.jpg',
+      description: '协助跨境电商受害者追回被骗资金，促成国际合作打击诈骗',
+      amount: '￥900,000',
+      duration: '3个月'
+    },
+    {
+      id: 11,
+      title: '社交媒体投资诈骗资金追回',
+      category: 'fraud',
+      image: '/assets/images/1742989665.jpg',
+      description: '追回通过社交媒体推广的虚假投资项目诈骗资金',
+      amount: '￥1,800,000',
+      duration: '4个月'
     }
   ];
 
@@ -107,7 +153,11 @@ const Cases = () => {
         {/* Cases Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCases.map(caseItem => (
-            <div key={caseItem.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <Link
+              to={`/case/${caseItem.id}`}
+              key={caseItem.id}
+              className="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105 duration-300"
+            >
               <div className="relative aspect-[16/9]">
                 <LazyImage
                   src={caseItem.image}
@@ -123,7 +173,7 @@ const Cases = () => {
                   <span>用时: {caseItem.duration}</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
