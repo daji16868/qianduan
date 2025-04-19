@@ -50,6 +50,37 @@ const Home = () => {
     '/assets/images/q8.png'
   ];
 
+  // 案例数据
+  const successCases = [
+    {
+      id: 1,
+      title: '钓鱼网站诈骗资金追回',
+      category: 'cyber',
+      image: '/assets/images/1742992641.jpg',
+      description: '成功追回被钓鱼网站诈骗的大额资金，涉及多个国家的跨境诈骗案件',
+      amount: '￥2,000,000',
+      duration: '3个月'
+    },
+    {
+      id: 2,
+      title: '二元期权骗局资金追回',
+      category: 'financial',
+      image: '/assets/images/1742986110.jpg',
+      description: '协助受害者成功追回二元期权平台诈骗资金，打击跨国金融诈骗团伙',
+      amount: '￥1,500,000',
+      duration: '4个月'
+    },
+    {
+      id: 3,
+      title: '传销与庞氏骗局资金追回',
+      category: 'fraud',
+      image: '/assets/images/1742988567.jpg',
+      description: '成功瓦解大型传销组织，帮助多名受害者追回投资款',
+      amount: '￥3,000,000',
+      duration: '6个月'
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -79,6 +110,47 @@ const Home = () => {
               className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition duration-300"
             >
               立即咨询
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 成功案例部分 */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-4">成功案例</h2>
+          <p className="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            我们已经帮助众多受害者成功追回损失，以下是部分典型案例
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {successCases.map(caseItem => (
+              <div key={caseItem.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="relative aspect-[16/9]">
+                  <LazyImage
+                    src={caseItem.image}
+                    alt={caseItem.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{caseItem.title}</h3>
+                  <p className="text-gray-600 mb-4">{caseItem.description}</p>
+                  <div className="flex justify-between text-sm text-gray-500">
+                    <span>追回金额: {caseItem.amount}</span>
+                    <span>用时: {caseItem.duration}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-10">
+            <Link 
+              to="/cases"
+              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300"
+            >
+              查看更多案例
             </Link>
           </div>
         </div>
